@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    ci:
+        runs-on: ubuntu-latest
+              
+
+
+        steps:
+            - name: 'Init repository'
+              uses: actions/checkout@v3
+
+            - name: 'Setup node'
+              uses: actions/setup-node@v3
+              with:
+                node-version: '19'
+
+            - name: 'Install dependencies'
+              run: npm install
+
+            - name: 'Run linter'
+              run: npx eslint
+
+            - name: 'Run mocha'
+              run: npm test
+
+            - uses: JS-DevTools/npm-publish@v2
+              with:
+                token: ${{ secrets.NPM_TOKEN }}

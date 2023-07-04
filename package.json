@@ -1,0 +1,16 @@
+{
+  "name": "rzwilliam-td5",
+  "version": "1.0.0",
+  "description": "A beautiful library",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "William",
+  "license": "MIT",
+  "homepage": "https://github.com/RzWilliam/td-5#readme",
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "mocha": "^10.2.0"
+  }
+}
