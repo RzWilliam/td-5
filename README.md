@@ -13,7 +13,7 @@ npm install rzwilliam-td5
 Import the library and use the available functions to retrieve festival data.
 
 ```javascript
-const { getAllFestivals, getFestivalsByRegion, getFestivalsByDepartement, getFestivalsByDomaine } = require('festivals-library');
+const { getAllFestivals, getFestivalsByRegion, getFestivalsByDepartement, getFestivalsByDomaine } = require('rzwilliam-td5');
 ```
 ### getAllFestivals()
 
