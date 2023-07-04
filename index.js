@@ -4,9 +4,9 @@ function fetchUrl(url) {
     .then(data => data);
 }
 
-async function getAllFestivals() {
+async function getAllFestivals(row = 10) {
   try {
-    const url = 'https://data.culture.gouv.fr/api/records/1.0/search/?dataset=panorama-des-festivals&q=';
+    const url = 'https://data.culture.gouv.fr/api/records/1.0/search/?dataset=panorama-des-festivals&q='+'&rows='+ row;
     const data = await fetchUrl(url);
     const festivals = data.records.map(record => record.fields);
     return festivals;
@@ -16,9 +16,9 @@ async function getAllFestivals() {
   }
 }
 
-async function getFestivalsByRegion(region) {
+async function getFestivalsByRegion(region, row = 10) {
   try {
-    const url = `https://data.culture.gouv.fr/api/records/1.0/search/?dataset=panorama-des-festivals&q=&refine.region=${region}`;
+    const url = `https://data.culture.gouv.fr/api/records/1.0/search/?dataset=panorama-des-festivals&q=&refine.region=${region}`+'&rows='+ row;
     const data = await fetchUrl(url);
     const festivals = data.records.map(record => record.fields);
     return festivals;
@@ -28,9 +28,9 @@ async function getFestivalsByRegion(region) {
   }
 }
 
-async function getFestivalsByDepartement(departement) {
+async function getFestivalsByDepartement(departement, row = 10) {
   try {
-    const url = `https://data.culture.gouv.fr/api/records/1.0/search/?dataset=panorama-des-festivals&q=&refine.departement=${departement}`;
+    const url = `https://data.culture.gouv.fr/api/records/1.0/search/?dataset=panorama-des-festivals&q=&refine.departement=${departement}`+'&rows='+ row;
     const data = await fetchUrl(url);
     const festivals = data.records.map(record => record.fields);
     return festivals;
@@ -40,9 +40,9 @@ async function getFestivalsByDepartement(departement) {
   }
 }
 
-async function getFestivalsByDomaine(domaine) {
+async function getFestivalsByDomaine(domaine, row = 10) {
   try {
-    const url = `https://data.culture.gouv.fr/api/records/1.0/search/?dataset=panorama-des-festivals&q=&refine.domaine=${domaine}`;
+    const url = `https://data.culture.gouv.fr/api/records/1.0/search/?dataset=panorama-des-festivals&q=&refine.domaine=${domaine}`+'&rows='+ row;
     const data = await fetchUrl(url);
     const festivals = data.records.map(record => record.fields);
     return festivals;
